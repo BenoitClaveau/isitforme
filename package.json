@@ -1,0 +1,34 @@
+{
+    "name": "qwebs-route-tree",
+    "version": "1.0.0",
+    "description": "Advanced router for Qwebs, uses an highly performant Tree route structure algorithms.",
+    "main": "index.js",
+    "dependencies": {
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/BenoitClaveau/qwebs-route-tree.git"
+    },
+    "keywords": [
+        "https",
+        "qwebs",
+        "route",
+        "tree",
+        "algorithms",
+        "performant",
+        "advanced",
+        "webserver"
+    ],
+    "author": {
+        "name": "Benoît Claveau",
+        "email": "benoit.claveau@gmail.com"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/BenoitClaveau/qwebs-route-tree/issues"
+    },
+    "homepage": "https://github.com/BenoitClaveau/qwebs-route-tree"
+}
