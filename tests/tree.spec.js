@@ -5,7 +5,7 @@
  */
 "use strict";
 
-const Tree = require('../../lib/tree');
+const Tree = require('../lib/tree');
 
 describe("tree", () => {
 
