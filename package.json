@@ -1,5 +1,5 @@
 {
-    "name": "qwebs-route-tree",
+    "name": "qwebs-route",
     "version": "1.0.0",
     "description": "Advanced route parser for Qwebs, uses an highly performant Tree route structure algorithms.",
     "main": "index.js",
@@ -17,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/BenoitClaveau/qwebs-route-tree.git"
+        "url": "https://github.com/BenoitClaveau/qwebs-route.git"
     },
     "keywords": [
         "https",
@@ -35,7 +35,7 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/BenoitClaveau/qwebs-route-tree/issues"
+        "url": "https://github.com/BenoitClaveau/qwebs-route/issues"
     },
-    "homepage": "https://github.com/BenoitClaveau/qwebs-route-tree"
+    "homepage": "https://github.com/BenoitClaveau/qwebs-route"
 }
