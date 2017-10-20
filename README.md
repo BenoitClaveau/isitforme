@@ -7,9 +7,30 @@ Advanced router, uses an highly performant Tree route structure algorithms.
  [![NPM Download][npm-image-download]][npm-url]
  [![Dependencies Status][david-dm-image]][david-dm-url]
 
-## Features
+## What is this?
 
-  * [qwebs](https://www.npmjs.com/package/qwebs)
+The "tree" defines a series of hierarchical nodes with children to optimise the search method.
+
+For example, the routes:
+
+```
+/api/users
+/api/user/:id
+/api/user/:id/tasks
+/api/user/:id/validate
+```
+
+defines a tree that looks like
+
+```
+               api
+             /     \
+          users    user
+                 /     \
+             validate  :id
+                      /    \   
+                validate   tasks
+```
 
 ## Installation
 
