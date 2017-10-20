@@ -11,7 +11,7 @@ describe("tree", () => {
 
     it("no route", done => {
         let tree = new Tree();
-        expect(tree.findOne("/")).toBeNull();
+        expect(tree.isItForMe("/")).toBeNull();
         done();
     });
 
@@ -40,8 +40,8 @@ describe("tree", () => {
     it("root", done => {
         let tree = new Tree();        
         tree.push({ id: 1, route: "/" });
-        expect(tree.findOne("").router.id).toEqual(1);
-        expect(tree.findOne("/").router.id).toEqual(1);
+        expect(tree.isItForMe("").router.id).toEqual(1);
+        expect(tree.isItForMe("/").router.id).toEqual(1);
         done();
     });
     
@@ -52,7 +52,7 @@ describe("tree", () => {
         tree.push({ id: 3, route: "api/:test" });
         tree.push({ id: 1, route: ":test/:value" });
         
-        let item = tree.findOne("api/alert");
+        let item = tree.isItForMe("api/alert");
         expect(item.router.id).toEqual(3);
         expect(item.params.test).toEqual("alert");
         done();
@@ -65,7 +65,7 @@ describe("tree", () => {
         tree.push({ id: 1, route: ":test/:value" });
         tree.push({ id: 3, route: "api/:test" });
 
-        let item = tree.findOne("api/alert");
+        let item = tree.isItForMe("api/alert");
         expect(item.router.id).toEqual(3);
         expect(item.params.test).toEqual("alert");
         done();
@@ -78,7 +78,7 @@ describe("tree", () => {
         tree.push({ id: 2, route: "api/:test/info" });
         tree.push({ id: 1, route: ":test/:value" });
         
-        let item = tree.findOne("api/alert");
+        let item = tree.isItForMe("api/alert");
         expect(item.router.id).toEqual(3);
         expect(item.params.test).toEqual("alert");
         done();
@@ -90,7 +90,7 @@ describe("tree", () => {
         tree.push({ id: 1, route: ":route/info/:value" });
         tree.push({ id: 2, route: "api/info/:value" });
 
-        let item = tree.findOne("data/info/1");
+        let item = tree.isItForMe("data/info/1");
         expect(item.router.id).toEqual(1);
         expect(item.params.route).toEqual("data");
         expect(item.params.value).toEqual("1");
