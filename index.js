@@ -6,7 +6,7 @@
 
 'use strict';
 
-module.exports.Tree = require('./lib/tree');
+module.exports = require('./lib/isitforme');
 module.exports.Leaf = require('./lib/leaf');
 module.exports.Node = require('./lib/node');
 module.exports.Nodes = require('./lib/nodes');
