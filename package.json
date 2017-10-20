@@ -4,10 +4,11 @@
     "description": "Advanced route parser for Qwebs, uses an highly performant Tree route structure algorithms.",
     "main": "index.js",
     "dependencies": {
-        "qwebs": "latest"
+        "oups": "latest"
     },
     "devDependencies": {
         "mocha": "latest",
+        "expect.js": "latest",
         "coveralls": "latest",
         "istanbul": "latest"
     },
