@@ -1,5 +1,5 @@
-# qwebs-route
-Advanced router for Qwebs [qwebs](https://www.npmjs.com/package/qwebs), uses an highly performant Tree route structure algorithms.
+# isitforme
+Advanced router, uses an highly performant Tree route structure algorithms.
 
  [![NPM][npm-image]][npm-url]
  [![Build Status][travis-image]][travis-url]
@@ -14,27 +14,27 @@ Advanced router for Qwebs [qwebs](https://www.npmjs.com/package/qwebs), uses an 
 ## Installation
 
 ```shell
-npm install $qwebs-route --save
+npm install isitforme --save
 ```
 
 ## Test
 
-To run our tests, clone the qwebs-route repo and install the dependencies.
+To run our tests, clone the isitforme repo and install the dependencies.
 
 ```bash
-$ git clone https://github.com/BenoitClaveau/qwebs-route --depth 1
-$ cd qwebs-route
+$ git clone https://github.com/BenoitClaveau/isitforme --depth 1
+$ cd isitforme
 $ npm install
 $ cd tests
-$ node.exe "..\node_modules\jasmine\bin\jasmine" --verbose .
+$ node.exe "../node_modules/mocha/bin/mocha" .
 ```
 
-[npm-image]: https://img.shields.io/npm/v/qwebs-route.svg
-[npm-image-download]: https://img.shields.io/npm/dm/qwebs-route.svg
-[npm-url]: https://npmjs.org/package/qwebs-route
-[travis-image]: https://travis-ci.org/BenoitClaveau/qwebs-route.svg?branch=master
-[travis-url]: https://travis-ci.org/BenoitClaveau/qwebs-route
-[coveralls-image]: https://coveralls.io/repos/BenoitClaveau/qwebs-route/badge.svg?branch=master&service=github
-[coveralls-url]: https://coveralls.io/github/BenoitClaveau/qwebs-route?branch=master
-[david-dm-image]: https://david-dm.org/BenoitClaveau/qwebs-route/status.svg
-[david-dm-url]: https://david-dm.org/BenoitClaveau/qwebs-route
+[npm-image]: https://img.shields.io/npm/v/isitforme.svg
+[npm-image-download]: https://img.shields.io/npm/dm/isitforme.svg
+[npm-url]: https://npmjs.org/package/isitforme
+[travis-image]: https://travis-ci.org/BenoitClaveau/isitforme.svg?branch=master
+[travis-url]: https://travis-ci.org/BenoitClaveau/isitforme
+[coveralls-image]: https://coveralls.io/repos/BenoitClaveau/isitforme/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/BenoitClaveau/isitforme?branch=master
+[david-dm-image]: https://david-dm.org/BenoitClaveau/isitforme/status.svg
+[david-dm-url]: https://david-dm.org/BenoitClaveau/isitforme

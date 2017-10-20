@@ -1,5 +1,5 @@
 {
-    "name": "qwebs-route",
+    "name": "isitforme",
     "version": "1.0.0",
     "description": "Advanced route parser for Qwebs, uses an highly performant Tree route structure algorithms.",
     "main": "index.js",
@@ -7,17 +7,17 @@
         "qwebs": "latest"
     },
     "devDependencies": {
-        "jasmine": "latest",
+        "mocha": "latest",
         "coveralls": "latest",
         "istanbul": "latest"
     },
     "scripts": {
-        "test": "node node_modules/jasmine/bin/jasmine.js tests/*.spec.js",
-        "test-cover": "node_modules/.bin/istanbul cover node_modules/jasmine/bin/jasmine.js tests/*.spec.js"
+        "test": "node ./node_modules/mocha/bin/mocha tests",
+        "test-cover": "node_modules/.bin/istanbul cover node_modules/mocha/bin/mocha tests"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/BenoitClaveau/qwebs-route.git"
+        "url": "https://github.com/BenoitClaveau/isitforme.git"
     },
     "keywords": [
         "https",
@@ -35,7 +35,7 @@
     },
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/BenoitClaveau/qwebs-route/issues"
+        "url": "https://github.com/BenoitClaveau/isitforme/issues"
     },
-    "homepage": "https://github.com/BenoitClaveau/qwebs-route"
+    "homepage": "https://github.com/BenoitClaveau/isitforme"
 }
