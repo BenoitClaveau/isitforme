@@ -15,7 +15,7 @@ require("process").on('unhandledRejection', (reason, p) => {
 describe("pathRegex", () => {
 
     it("match static", done => {
-        let pathRegex = new PathRegex("/api", false, false, (key, value) => value);
+        let pathRegex = new PathRegex("/api", false, false);
         expect(pathRegex.match("/api").match).to.eql(true);
         expect(pathRegex.match("/api/2").match).to.eql(false);
         expect(pathRegex.match("/api/value").match).to.eql(false);
@@ -25,7 +25,7 @@ describe("pathRegex", () => {
     });
     
     it("match dynamic", done => {
-        let pathRegex = new PathRegex("/api/:id", false, false, (key, value) => value);
+        let pathRegex = new PathRegex("/api/:id", false, false);
         expect(pathRegex.match("/api/1").match).to.eql(true);
         expect(pathRegex.match("/api/2").match).to.eql(true);
         expect(pathRegex.match("/api/value").match).to.eql(true);
@@ -35,7 +35,7 @@ describe("pathRegex", () => {
     });
     
     it("match generic", done => {
-        let pathRegex = new PathRegex("/api/*", false, false, (key, value) => value);
+        let pathRegex = new PathRegex("/api/*", false, false);
         expect(pathRegex.match("/api/1").match).to.eql(true);
         expect(pathRegex.match("/api/2").match).to.eql(true);
         expect(pathRegex.match("/api/value").match).to.eql(true);
