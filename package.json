@@ -1,6 +1,6 @@
 {
     "name": "isitforme",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Advanced route parser for Qwebs, uses an highly performant Tree route structure algorithms.",
     "main": "index.js",
     "dependencies": {
@@ -21,11 +21,12 @@
         "url": "https://github.com/BenoitClaveau/isitforme.git"
     },
     "keywords": [
+        "http",
         "https",
         "qwebs",
         "route",
         "tree",
-        "algorithms",
+        "algorithm",
         "performant",
         "advanced",
         "webserver"

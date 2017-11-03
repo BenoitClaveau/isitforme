@@ -12,7 +12,7 @@ describe("isitforme", () => {
 
     it("no route", done => {
         let isitforme = new IsItForMe();
-        expect(isitforme.ask("/")).toBeNull();
+        expect(isitforme.ask("/")).to.be(null);
         done();
     });
 
@@ -22,7 +22,7 @@ describe("isitforme", () => {
             isitforme.push(null); //no router
             fail()
         } catch(error) {
-            expect(error.message).to.be("Router object is not defined.");
+            expect(error.message).to.eql("Router is undefined.");
             done();
         }
     });
@@ -33,7 +33,7 @@ describe("isitforme", () => {
             isitforme.push({}); //no route property
             fail()
         } catch(error) {
-            expect(error.message).to.be("Route property is not defined.");
+            expect(error.message).to.eql("Route property is undefined.");
             done();
         }
     });
@@ -41,9 +41,9 @@ describe("isitforme", () => {
     it("root", done => {
         let isitforme = new IsItForMe();        
         isitforme.push({ route: "/" });
-        expect(isitforme.ask("").router.route).to.be("/");
+        expect(isitforme.ask("").router.route).to.eql("/");
         expect(isitforme.ask("").params).to.eql({});
-        expect(isitforme.ask("/").router.route).to.be("/");
+        expect(isitforme.ask("/").router.route).to.eql("/");
         expect(isitforme.ask("/").params).to.eql({});
         done();
     });
@@ -53,10 +53,10 @@ describe("isitforme", () => {
     
         isitforme.push({ id: 1, route: "api/:test/info" });
         
-        expect(isitforme.ask("api/alert/info").router.id).to.be(1);
-        expect(isitforme.ask("api/alert/info").router.route).to.be("api/:test/info");
-        expect(isitforme.ask("api/alert/info").params.test).to.be("alert");
-        expect(isitforme.ask("api/33/info").params.test).to.be(33);
+        expect(isitforme.ask("api/alert/info").router.id).to.eql(1);
+        expect(isitforme.ask("api/alert/info").router.route).to.eql("api/:test/info");
+        expect(isitforme.ask("api/alert/info").params.test).to.eql("alert");
+        expect(isitforme.ask("api/33/info").params.test).to.eql(33);
         done();
     });
     
@@ -67,9 +67,9 @@ describe("isitforme", () => {
         isitforme.push({ id: 3, route: "api/:test" });
         isitforme.push({ id: 1, route: ":test/:value" });
         
-        expect(isitforme.ask("api/alert").router.id).to.be(3);
-        expect(isitforme.ask("api/alert").router.route).to.be("api/:test");
-        expect(isitforme.ask("api/alert").params.test).to.be("alert");
+        expect(isitforme.ask("api/alert").router.id).to.eql(3);
+        expect(isitforme.ask("api/alert").router.route).to.eql("api/:test");
+        expect(isitforme.ask("api/alert").params.test).to.eql("alert");
         done();
     });
     
@@ -81,8 +81,8 @@ describe("isitforme", () => {
         isitforme.push({ id: 3, route: "api/:test" });
 
         let item = isitforme.ask("api/alert");
-        expect(item.router.id).to.be(3);
-        expect(item.params.test).to.be("alert");
+        expect(item.router.id).to.eql(3);
+        expect(item.params.test).to.eql("alert");
         done();
     });
     
@@ -94,8 +94,8 @@ describe("isitforme", () => {
         isitforme.push({ id: 1, route: ":test/:value" });
         
         let item = isitforme.ask("api/alert");
-        expect(item.router.id).to.be(3);
-        expect(item.params.test).to.be("alert");
+        expect(item.router.id).to.eql(3);
+        expect(item.params.test).to.eql("alert");
         done();
     });
     
@@ -106,9 +106,30 @@ describe("isitforme", () => {
         isitforme.push({ id: 2, route: "api/info/:value" });
 
         let item = isitforme.ask("data/info/1");
-        expect(item.router.id).to.be(1);
-        expect(item.params.route).to.be("data");
-        expect(item.params.value).to.be("1");
+        expect(item.router.id).to.eql(1);
+        expect(item.params.route).to.eql("data");
+        expect(item.params.value).to.eql(1);
+
+        item = isitforme.ask("api/info/1");
+        expect(item.router.id).to.eql(2);
+        expect(item.params.value).to.eql(1);
+        done();
+    });
+
+    it("reviver", done => {
+        let isitforme = new IsItForMe();
+        
+        isitforme.push({ id: 1, route: "api/info/:value" });
+
+        let item = isitforme.ask("api/info/1");
+        expect(item.params.value).to.eql(1);
+
+        item = isitforme.ask("api/info/true");
+        expect(item.params.value).to.eql(true);
+
+        item = isitforme.ask("api/info/false");
+        expect(item.params.value).to.eql(false);
+        
         done();
     });
 });
