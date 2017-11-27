@@ -1,7 +1,7 @@
 {
     "name": "isitforme",
-    "version": "0.0.3",
-    "description": "Advanced route parser for Qwebs, uses an highly performant Tree route structure algorithms.",
+    "version": "0.0.4",
+    "description": "Advanced route parser, uses an highly performant Tree route structure algorithms.",
     "main": "index.js",
     "dependencies": {
         "oups": "latest"
